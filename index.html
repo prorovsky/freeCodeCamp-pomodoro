@@ -9,9 +9,37 @@
     <title>Pomodoro Timer</title>
 </head>
 <body>
-    <h1>Pomodoro Timer</h1>
+    <header>
+        <h1>Pomodoro Timer</h1>
+    </header>
 
-    
+    <main class="container">
+        <div class="row">
+            <section class="session col-md-6">
+                <div class="user-input">
+                    <p>Session</p>
+                    <input type="number" placeholder="H" min="0" max="24">
+                    <input type="number" placeholder="M" min="0" max="60">
+                    <input type="number" placeholder="S" min="0" max="60">
+                </div>
+                <div class="session-display">
+                    <span class="hours"></span><span class="minutes"></span><span class="seconds"></span>
+                </div>
+            </section>
+            <section class="break col-md-6">
+                <div class="user-input">
+                    <p>Break</p>
+                    <input type="number" placeholder="H" min="0" max="24">
+                    <input type="number" placeholder="M" min="0" max="60">
+                    <input type="number" placeholder="S" min="0" max="60">
+                </div>
+                <div class="break-display">
+                    <span class="hours"></span><span class="minutes"></span><span class="seconds"></span>
+                </div>
+            </section>
+            <button class="btn btn-default">Start</button>
+        </div>
+    </main>    
 
     <script src="./libs/jquery-3.1.1.min.js"></script>
     <script src="./libs/bootstrap_3_3_7/js/bootstrap.min.js"></script>
