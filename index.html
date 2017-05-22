@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./libs/bootstrap_3_3_7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700" rel="stylesheet"> 
     <link rel="stylesheet" href="./css/main.css">
     <title>Pomodoro Timer</title>
 </head>
@@ -18,26 +19,27 @@
             <section class="session col-md-6">
                 <div class="user-input">
                     <p>Session</p>
-                    <input type="number" placeholder="H" min="0" max="24">
-                    <input type="number" placeholder="M" min="0" max="60">
-                    <input type="number" placeholder="S" min="0" max="60">
+                    <input type="number" placeholder="H" min="0" max="24" id="session-hours">
+                    <input type="number" placeholder="M" min="0" max="60" id="session-minutes">
+                    <input type="number" placeholder="S" min="0" max="60" id="session-seconds">
                 </div>
                 <div class="session-display">
-                    <span class="hours"></span><span class="minutes"></span><span class="seconds"></span>
+                    <span id="session-countdown">00:00:00<span>
                 </div>
             </section>
             <section class="break col-md-6">
                 <div class="user-input">
                     <p>Break</p>
-                    <input type="number" placeholder="H" min="0" max="24">
-                    <input type="number" placeholder="M" min="0" max="60">
-                    <input type="number" placeholder="S" min="0" max="60">
+                    <input type="number" placeholder="H" min="0" max="24" id="break-hours">
+                    <input type="number" placeholder="M" min="0" max="60" id="break-minutes">
+                    <input type="number" placeholder="S" min="0" max="60" id="break-seconds">
                 </div>
                 <div class="break-display">
-                    <span class="hours"></span><span class="minutes"></span><span class="seconds"></span>
+                    <span id="break-countdown">00:00:00<span>
                 </div>
             </section>
-            <button class="btn btn-default">Start</button>
+            <button class="btn btn-info" id="start-timer">Start</button>
+            <button class="btn btn-danger" id="pause-timer">Pause</button>
         </div>
     </main>    
 

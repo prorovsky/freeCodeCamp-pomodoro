@@ -1,22 +1,25 @@
 body {
     text-align: center;
-
+    font-family: 'Droid Serif', serif;
     background: #c2e59c;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #64b3f4, #c2e59c);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #64b3f4, #c2e59c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 }
 
-h1 {
-    text-align: center;
+h1, p, .session-display, .break-display {
+    color: seashell;
+}
+
+input {
+    border-radius: 5px;
+}
+
+p {
+    font-size: 20px;
 }
 
 .container {
     width: 400px;
-}
-
-p {
-    text-align: center;
 }
 
 input {
@@ -24,5 +27,9 @@ input {
 }
 
 .session-display, .break-display  {
-    height: 100px;
+    font-size: 36px;
+}
+
+.btn {
+    margin: 5px;
 }
