@@ -8,17 +8,14 @@ $(function(){
           breakSeconds = $("#break-seconds"),
           sessionDisplayCountdown = $("#session-countdown"),
           breakDisplayCountdown = $("#break-countdown"),
-          bell = new Audio("./libs/bell.mp3");;
+          bell = new Audio("./libs/bell.mp3");
 
-    var counter = 0;
-
-    var sessionTimer;
-    var breakTimer;
-
-    var sessionInterval;
-    var breakInterval;
-
-    var isContinued = true;
+    var counter = 0,
+        sessionTimer,
+        breakTimer,
+        sessionInterval,
+        breakInterval,
+        isContinued = true;
 
     $("#start-timer").on("click", function(){
         resetTimers();
