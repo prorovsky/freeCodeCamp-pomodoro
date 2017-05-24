@@ -7,7 +7,8 @@ $(function(){
           breakMinutes = $("#break-minutes"),
           breakSeconds = $("#break-seconds"),
           sessionDisplayCountdown = $("#session-countdown"),
-          breakDisplayCountdown = $("#break-countdown");
+          breakDisplayCountdown = $("#break-countdown"),
+          bell = new Audio("./libs/bell.mp3");;
 
     var counter = 0;
 
@@ -44,6 +45,12 @@ $(function(){
         breakTimer = (+breakHours.val() * 60 * 60) + (+breakMinutes.val() * 60) + +breakSeconds.val();
         breakTimer = validationCheck(breakTimer);
     }
+    
+    function startTimers(){
+        sessionInterval = setInterval(() => {
+            timerCounter(sessionTimer);
+        }, 1000);
+    }
 
     function timerCounter(timer){
         var timeLeft = timer - counter;
@@ -56,6 +63,7 @@ $(function(){
                 clearInterval(sessionInterval);
                 counter = 0;
                 sessionInterval = undefined;
+                bell.play();
                 breakInterval = setInterval(() => {
                     timerCounter(breakTimer);
                 }, 1000);
@@ -66,6 +74,7 @@ $(function(){
                 clearInterval(breakInterval);
                 counter = 0;
                 breakInterval = undefined;
+                bell.play();
                 sessionInterval = setInterval(() => {
                     timerCounter(sessionTimer);
                 }, 1000);
@@ -73,14 +82,6 @@ $(function(){
         }
     }
 
-    function startTimers(){
-        sessionInterval = setInterval(() => {
-            timerCounter(sessionTimer);
-        }, 1000);
-    }
-
-    //============================================
-    // helpers
     function convertToHumanTime(s){
         var hours = Math.floor((s / 60) / 60);
         var minutes = Math.floor(s / 60) % 60;
@@ -105,4 +106,4 @@ $(function(){
         clearInterval(breakInterval);
         counter = 0;
     }
-}) // end dom ready
+})
